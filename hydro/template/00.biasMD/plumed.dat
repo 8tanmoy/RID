@@ -1,0 +1,14 @@
+p1oh2: DISTANCE ATOMS=1,10
+p1o4: DISTANCE ATOMS=1,5
+
+#define distances and combine to make asymmetric stretch
+#asym: DISTANCES ATOMS1=10,1 ATOMS2=10,11
+#d1: DISTANCES GROUPA=11 GROUPB=2,3,4
+
+d1: DISTANCE ATOMS=2,11
+d2: DISTANCE ATOMS=10,11
+asym: CUSTOM ARG=d1,d2 FUNC=y-x PERIODIC=NO
+dpfe: DEEPFE TRUST_LVL_1= TRUST_LVL_2= MODEL= ARG=p1oh2,p1o4,asym
+
+PRINT STRIDE= ARG=p1oh2,p1o4,asym FILE=plm.dpfe.out
+
