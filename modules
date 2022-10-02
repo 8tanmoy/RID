@@ -1,0 +1,8 @@
+
+Currently Loaded Modules:
+  1) cmake/3.19.4                            4) netcdf/4.6.1_intel-2019   7) openmpi/3.1.4_intel-2019  10) tensorflow/1.13.1
+  2) scalapack/2.0.2_gcc-8.1_openmpi-3.1.4   5) vmd/1.9.3                 8) cuda/10.0                 11) grace/5.1.25
+  3) openblas/0.3.7                          6) intel/2019                9) python3/3.6.5             12) gcc/8.1.0
+
+ 
+

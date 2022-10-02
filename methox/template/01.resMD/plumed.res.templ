@@ -1,7 +1,0 @@
-poatt: DISTANCE ATOMS=1,10
-polg: DISTANCE ATOMS=1,5
-
-res-poatt: RESTRAINT ARG=poatt KAPPA=5000 AT=0.225
-res-polg: RESTRAINT ARG=polg KAPPA=5000 AT=0.225
-
-PRINT STRIDE= ARG=poatt,polg FILE=plm.res.out

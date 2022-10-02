@@ -1,4 +1,0 @@
-/projectnb/cui-buchem/tanmoy/projects/RL/hydro/metad/dftb3/template/mol/npt.mdp as grompp.mdp
-/projectnb/cui-buchem/tanmoy/projects/RL/hydro/metad/dftb3/template/mol/npt_restraint.gro as conf.gro
-/projectnb/cui-buchem/tanmoy/projects/RL/hydro/metad/dftb3/template/mol/index.ndx as index.ndx
-adding all four bond definitions to index.ndx 

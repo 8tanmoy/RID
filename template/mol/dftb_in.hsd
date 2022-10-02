@@ -1,0 +1,83 @@
+Geometry = GenFormat {
+   <<< "geom.gen"
+}
+Hamiltonian = DFTB{ 
+   MaxAngularMomentum = {
+      O = "p"
+      P = "d"
+      C = "p" 
+      H = "s"
+   }
+   Charge = -2.0
+   SCC = Yes
+   SCCTolerance = 1e-08 
+   SlaterKosterFiles = Type2FileNames { 
+      Prefix = /projectnb/cui-buchem/tanmoy/packages/dftbplus-machine-learning-tanmoy/external/slakos/origin/3ob-3-1/ 
+      Separator = "-" 
+      Suffix = ".skf" 
+   } 
+   ThirdOrderFull = Yes
+   HubbardDerivs {
+      H = -0.1857
+      C = -0.1492
+      O = -0.1575
+      P = -0.14
+   }
+   Filling = Fermi {Temperature [K] = 0.0}
+   HCorrection = Damping {
+      Exponent = 4.0
+   }
+   Dispersion = DftD3{ 
+   Damping = BeckeJohnson { a1 = 0.746, 
+      a2 = 4.191 } 
+      s6 = 1.0 
+      s8 = 3.209 
+      threebody = Yes 
+   } 
+   MachineLearning = NeuralNet {
+      SymmetryFunctions {
+         Neighboursearching = Yes
+         AtomicNumber = {
+             H = 1
+             C = 6
+             O = 8
+             P = 15
+         }
+         RadialCutoff = 5 
+         RadialParameters {
+         0.8802919970100839 5.82855675922245
+         1.5669099975084033 1.8396128482674234
+         2.2535279980067227 0.889382584226383
+         2.940145998505042 0.5224885094215684
+         3.6267639990033613 0.3433807501612858
+         4.31338199950168 0.24276087488415343
+         5.0 0.18066520930064464
+         }
+         AngularCutoff = 3.140904099888715 
+         AngularParameters {
+         0.001 1.086706494374006 -1.0
+         0.001 1.086706494374006 1.0
+         0.001 3.0 -1.0
+         0.001 3.0 1.0
+         0.00039011003131298084 1.086706494374006 -1.0
+         0.00039011003131298084 1.086706494374006 1.0
+         0.00039011003131298084 3.0 -1.0
+         0.00039011003131298084 3.0 1.0
+         }
+      }
+      NeuralNetworkFiles = Type2Filenames {
+         Prefix = "/projectnb/cui-buchem/tanmoy/projects/ML_delta/hydro_RL_gas_delta_run4/nn-params/"  
+         Suffix = "-subnet.param" 
+      }
+   }
+} 
+Options { 
+   WriteResultsTag = Yes  
+   TimingVerbosity = -1
+} 
+ParserOptions { 
+   IgnoreUnprocessedNodes = Yes  
+} 
+Analysis {
+   CalculateForces = Yes
+}
